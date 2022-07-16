@@ -1,0 +1,91 @@
+.app-baseresource {
+  display: grid;
+  grid-template-columns: 2fr 5fr;
+  @media screen and (max-width: $mobile-width) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  gap: 3rem;
+  margin: 0 auto;
+  padding: 2rem;
+  &__links {
+    @media screen and (max-width: $mobile-width) {
+      display: none;
+    }
+    padding-top: 1rem;
+    font-size: 1.5rem;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.sidebar-links {
+  li {
+    margin-bottom: 1rem;
+    transition: all 0.25s ease;
+    &:hover {
+      font-size: 1.53rem;
+      color: $rose;
+    }
+  }
+}
+
+.sidebar-dark {
+  li {
+    margin-bottom: 1rem;
+    transition: all 0.25s ease;
+    &:hover {
+      font-size: 1.53rem;
+      color: $green;
+    }
+  }
+}
+
+.current {
+  font-size: 1.53rem;
+  color: $rose;
+}
+
+.current--dark {
+  font-size: 1.53rem;
+  color: $green;
+}
+
+.resource-dropdown {
+  display: none;
+  border-bottom: 1px solid $light-gray;
+  @media screen and (max-width: $mobile-width) {
+    cursor: pointer;
+    display: block;
+    justify-self: right;
+  }
+
+  z-index: 10000;
+  .resource-dropdown__options {
+    padding: 0.5rem;
+    background-color: $dark-gray;
+    color: $light-gray;
+    border-radius: 0.5rem;
+    font-size: 1.25rem;
+    div {
+      padding-left: 0.25rem;
+      padding-right: 0.25rem;
+      padding-bottom: 0.25rem;
+      transition: all 0.25s ease-in;
+      &:hover {
+        font-size: 1.3rem;
+        color: $rose;
+        transition: all 0.25s ease-in;
+      }
+    }
+  }
+}
+
+.link-dark {
+  &:hover {
+    font-size: 1.3rem;
+    color: $green;
+    transition: all 0.25s ease-in;
+  }
+}

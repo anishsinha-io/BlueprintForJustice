@@ -1,0 +1,65 @@
+// import variables before anything else
+@import "scss/abstracts/variables";
+
+// import animations
+@import "scss/animations/animations";
+
+// import components in any order
+@import "scss/components/button";
+@import "scss/components/app";
+@import "scss/components/home";
+@import "scss/components/about";
+@import "scss/components/contact";
+@import "scss/components/heading";
+@import "scss/components/card";
+@import "scss/components/resources";
+@import "scss/components/blueprint";
+@import "scss/components/navbar";
+@import "scss/components/footer";
+@import "scss/components/switch";
+@import "scss/components/checkbox";
+@import "scss/components/questionnaire";
+@import "scss/components/slide";
+@import "scss/components/resourcebase";
+@import "scss/components/resources";
+@import "scss/components/resource";
+@import "scss/components/loading";
+@import "scss/components/dropdown";
+@import "scss/components/tab";
+@import "scss/components/inlinelink";
+@import "scss/components/credits";
+
+@import "scss/base/hidden";
+
+// import other themes
+@import "scss/themes/darkmode";
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: futura-pt;
+  background-color: $light-gray;
+}
+
+li {
+  list-style: none;
+}
+
+hr {
+  border: 0;
+  clear: both;
+  display: block;
+  width: 96%;
+  background-color: $dark-gray;
+  height: 1px;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}

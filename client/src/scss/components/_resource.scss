@@ -1,0 +1,89 @@
+.app-resource {
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+
+  @media screen and (max-width: $mobile-width) {
+    width: 100%;
+  }
+}
+
+.block-container {
+  h1 {
+    font-size: 1.75rem;
+    text-decoration: underline;
+  }
+  padding-bottom: 1rem;
+}
+
+.resource-block {
+  padding-bottom: 1rem;
+  &__link,
+  &__description {
+    font-size: 1.5rem;
+  }
+}
+
+.resource-title {
+  font-size: 2rem;
+  margin: 0 auto;
+  text-decoration: underline;
+}
+
+.resource-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.link-heading {
+  transition: all 0.25s ease;
+  font-weight: 300;
+  color: $rose;
+  &:hover {
+    color: $green;
+    font-size: 1.525rem;
+  }
+}
+
+.link-heading-dark {
+  transition: all 0.25s ease;
+  color: $green;
+  &:hover {
+    color: $rose;
+    font-size: 1.525rem;
+  }
+}
+
+.resource-header {
+  font-size: 1.5rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin-bottom: 1rem;
+  justify-items: center;
+  &__name {
+    font-size: 1.65rem;
+    text-decoration: underline;
+    text-align: center;
+  }
+}
+
+.resource {
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  &__subheading {
+    font-size: 1.75rem;
+    color: $rose;
+    &--dark {
+      font-size: 1.75rem;
+      color: $green;
+      margin-bottom: 1rem;
+    }
+    margin-bottom: 1rem;
+  }
+  &__content {
+    margin-bottom: 2rem;
+  }
+}

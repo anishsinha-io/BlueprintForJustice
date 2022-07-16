@@ -1,0 +1,62 @@
+import React from "react";
+
+import Credits from "components/About/Credits";
+import CreditBlock from "components/About/CreditBlock";
+import Card from "components/Reusables/Card";
+
+import CommunityConnections from "assets/resource-images/community-connections.png";
+import { ReactComponent as MainLogoDark } from "assets/svg/blackmothersfilm-logo-dark.svg";
+
+import founders from "components/About/founders";
+
+const About = () => {
+  const foundersCards = founders.map(
+    (founder: { name: string; bio: string; url?: string; imgSrc?: string }) => {
+      return (
+        <Card
+          className="about-card"
+          key={founder.name}
+          title={founder.name}
+          label={founder.name}
+          imgSrc={CommunityConnections}
+          imgAlt={founder.name}
+          icon={MainLogoDark}
+          text={founder.bio}
+          size="md"
+          link={founder.url}
+        />
+      );
+    }
+  );
+  return (
+    <section className="app-about">
+      <div className="about-main">
+        <div className="app-about__main">
+          <h1 className="about-title">About Us</h1>
+          This project was developed to allow those that have experienced this
+          hardship to find the assistance they need, as well as those that hope
+          to get involved. as a part of the Black Mothers Film. We set out with
+          the task to compile the best resources for ease of access.
+        </div>
+        <div className="app-about__mission">
+          <h1 className="about-mission">Mission and Statement</h1>
+          This project was developed to allow those that have experienced this
+          hardship to find the assistance they need, as well as those that hope
+          to get involved.. We set out with the task to compile the best
+          resources for ease of access.
+        </div>
+        <div className="app-about__team">
+          <h1 className="about-team">Our Team</h1>
+          Comprised of professionals versed in all facets of UX - we share a
+          sense of community, united in a desire to give back.
+        </div>
+      </div>
+      <div className="about-body">
+        <div className="about-body__cards">{foundersCards}</div>
+        <Credits />
+      </div>
+    </section>
+  );
+};
+
+export default About;

@@ -1,0 +1,21 @@
+.app-questionnaire {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: right;
+  font-size: 1.6rem;
+  .btn {
+    width: 10rem;
+    &-exit {
+      margin-top: 1rem;
+      margin-right: 1.3rem;
+      margin-left: auto;
+    }
+  }
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+}
+
+.questionnaire-card {
+  border-radius: 0.5rem;
+}

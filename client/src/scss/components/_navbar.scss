@@ -1,0 +1,111 @@
+.app-navbar {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+  @media screen and (max-width: $medium-screen-width) {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  }
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  &__logo {
+    font-size: 1.5rem;
+    padding-left: 1rem;
+    @media screen and (max-width: $medium-screen-width) {
+      .logo-text {
+        display: none;
+      }
+    }
+  }
+  &__about,
+  &__resources,
+  &__contact,
+  &__switch {
+    font-size: 1.5rem;
+    width: 100%;
+    &:hover {
+      color: $rose;
+      font-size: 1.53rem;
+    }
+    transition: all 0.25s ease-in;
+  }
+
+  &__about--dark,
+  &__resources--dark,
+  &__contact--dark {
+    font-size: 1.5rem;
+    width: 100%;
+    &:hover {
+      color: $green;
+      font-size: 1.53rem;
+    }
+    transition: all 0.25s ease-in;
+  }
+
+  &__switch {
+    display: grid;
+    grid-template-columns: 1fr;
+    place-items: center;
+    margin-top: 0.25rem;
+    .switch-container {
+      display: flex;
+      place-items: center;
+    }
+  }
+}
+
+.navbar-resources {
+  z-index: 10000;
+  .navbar-resources__options {
+    padding: 0.5rem;
+    background-color: $dark-gray;
+    color: $light-gray;
+    border-radius: 0.5rem;
+    font-size: 1.25rem;
+
+    div {
+      padding-left: 0.25rem;
+      padding-right: 0.25rem;
+      padding-bottom: 0.25rem;
+      transition: all 0.25s ease-in;
+      &:hover {
+        font-size: 1.3rem;
+        color: $rose;
+        transition: all 0.25s ease-in;
+      }
+    }
+  }
+}
+
+.navbar-resources--dark {
+  z-index: 10000;
+  .navbar-resources--dark__options {
+    padding: 0.5rem;
+    background-color: $loading-gray;
+    color: $light-gray;
+    border-radius: 0.5rem;
+    font-size: 1.25rem;
+
+    div {
+      padding-left: 0.25rem;
+      padding-right: 0.25rem;
+      padding-bottom: 0.25rem;
+      transition: all 0.25s ease-in;
+      &:hover {
+        font-size: 1.3rem;
+        color: $green;
+        transition: all 0.25s ease-in;
+      }
+    }
+  }
+}
+
+#switch-moon {
+  margin-left: 0.5rem;
+}
+
+#logo {
+  display: none;
+  @media screen and (max-width: $medium-screen-width) {
+    display: block;
+  }
+}

@@ -1,0 +1,15 @@
+.inline-link {
+  color: $rose;
+  &:hover {
+    color: $green;
+  }
+  transition: all 1s ease-in;
+}
+
+.inline-link-dark {
+  color: $green;
+  &:hover {
+    color: $pink;
+  }
+  transition: all 1s ease-in;
+}

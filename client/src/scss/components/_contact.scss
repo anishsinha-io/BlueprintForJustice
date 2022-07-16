@@ -1,0 +1,64 @@
+.app-contact {
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+  margin: 0 auto;
+  width: 60%;
+  @media screen and (max-width: $small-screen-width) {
+    width: 90%;
+  }
+  margin-bottom: 4rem;
+}
+
+.contact-inputs {
+  display: flex;
+  flex-direction: column;
+  @media screen and (max-width: $medium-screen-width) {
+    place-items: center;
+  }
+  &__entry {
+    display: flex;
+    flex-direction: column;
+    width: 49%;
+    @media screen and (max-width: $medium-screen-width) {
+      width: 85%;
+      margin-left: 0;
+    }
+    margin-left: 1rem;
+    margin-bottom: 1rem;
+    label {
+      margin-bottom: 0.5rem;
+      &:after {
+        content: " *";
+        color: $rose;
+      }
+    }
+    input {
+      font-family: futura;
+      font-size: 1rem;
+      height: 3rem;
+      border-radius: 2rem;
+      padding-left: 1rem;
+    }
+  }
+}
+
+#contact-message {
+  resize: none;
+  border-radius: 2rem;
+  font-family: futura;
+  font-size: 1rem;
+  padding: 0.75rem;
+  height: 10rem;
+}
+
+.form-heading {
+  font-size: 1.25rem;
+}
+
+.contact-submit {
+  margin-top: 2rem;
+  padding: 1rem;
+  border-radius: 2rem;
+  width: 50%;
+}

@@ -1,0 +1,104 @@
+.app-about {
+  .about-main {
+    display: grid;
+    grid-template-columns: 1fr;
+    margin: 0 12rem;
+    @media screen and (max-width: $large-screen-width) {
+      margin: 0 10rem;
+    }
+    @media screen and (max-width: $medium-screen-width) {
+      margin: 0 6rem;
+    }
+    @media screen and (max-width: $small-screen-width) {
+      margin: 0 4rem;
+    }
+    @media screen and (max-width: $mobile-width) {
+      margin: 0 2rem;
+    }
+    gap: 1rem;
+    padding: 0 2rem;
+    font-size: 1.5rem;
+    .about-title,
+    .about-mission,
+    .about-team {
+      text-align: center;
+    }
+  }
+  margin-bottom: 4rem;
+}
+.about-body {
+  margin: 0 10rem;
+  margin-top: 4rem;
+  &__filter {
+    display: flex;
+    flex-direction: column;
+    margin: 0 12rem;
+    @media screen and (max-width: $large-screen-width) {
+      margin: 0 10rem;
+    }
+    @media screen and (max-width: $medium-screen-width) {
+      margin: 0 6rem;
+    }
+    @media screen and (max-width: $small-screen-width) {
+      margin: 0 4rem;
+    }
+    @media screen and (max-width: $mobile-width) {
+      margin: 0 2rem;
+    }
+  }
+  &__cards {
+    color: $light-gray;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    @media screen and (max-width: $medium-screen-width) {
+      grid-template-columns: 1fr 1fr;
+    }
+    @media screen and (max-width: $mobile-width) {
+      grid-template-columns: 1fr;
+    }
+    margin-bottom: 4rem;
+    justify-items: center;
+    align-items: center;
+    gap: 1rem;
+    & > div {
+      margin-bottom: 2rem;
+      border-radius: 1rem;
+    }
+
+    @media screen and (max-width: $large-screen-width) {
+      margin: 2rem 10rem;
+    }
+    @media screen and (max-width: $medium-screen-width) {
+      margin: 2rem 6rem;
+    }
+    @media screen and (max-width: $small-screen-width) {
+      margin: 2rem 4rem;
+    }
+    @media screen and (max-width: $mobile-width) {
+      margin: 2rem 2rem;
+    }
+    padding: 0 2rem;
+  }
+}
+
+.tab-container {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  @media screen and (max-width: $medium-screen-width) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  & > div {
+    height: 6rem;
+    display: flex;
+    place-items: center;
+  }
+}
+
+.about-card {
+  animation: fadein 1s;
+}
+
+.filter--title {
+  font-size: 1.6rem;
+}

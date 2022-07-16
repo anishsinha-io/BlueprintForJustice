@@ -1,0 +1,34 @@
+.questionnaire-slide {
+  width: 50rem;
+  @media screen and (max-width: $medium-screen-width) {
+    width: 40rem;
+  }
+  @media screen and (max-width: $small-screen-width) {
+    width: 25rem;
+  }
+  &__options {
+    display: flex;
+    flex-direction: column;
+    .btn-questionnaire {
+      margin-bottom: 0.25rem;
+      margin-left: auto;
+    }
+  }
+}
+
+.questionnaire-results {
+  display: flex;
+  flex-direction: column;
+  @media screen and (max-width: $small-screen-width) {
+    place-items: center;
+  }
+  &__cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1rem;
+    @media screen and (max-width: $small-screen-width) {
+      grid-template-columns: 1fr 1fr;
+      gap: 1.75rem;
+    }
+  }
+}

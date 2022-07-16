@@ -1,0 +1,22 @@
+.app-credits {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 1rem;
+  justify-items: center;
+}
+
+.credit-block {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  font-size: 1.15rem;
+  &__title {
+    text-transform: uppercase;
+  }
+}
+
+.credit-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}

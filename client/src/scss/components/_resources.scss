@@ -1,0 +1,36 @@
+.app-resources {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.resources-description {
+  width: 100%;
+  padding: 3rem;
+  font-size: 1.5rem;
+  @media screen and (max-width: $small-screen-width) {
+    text-align: center;
+  }
+}
+
+.resources-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  & > div {
+    border-radius: 1rem;
+  }
+  gap: 3rem;
+  place-items: center;
+  padding: 1rem;
+  @media screen and (max-width: $large-screen-width) {
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+  @media screen and (max-width: $small-screen-width) {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+}

@@ -1,0 +1,37 @@
+.app-blueprint {
+  margin-top: 4rem;
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+  &__header {
+    width: 90%;
+    font-size: 1.5rem;
+  }
+}
+
+.story-element {
+  display: flex;
+  @media screen and (max-width: $small-screen-width) {
+    width: 100%;
+    flex-direction: column;
+    &__img {
+      width: 100%;
+      padding: 0;
+    }
+  }
+  @media screen and (max-width: $small-screen-width) {
+    &:nth-child(2) {
+      flex-direction: column-reverse;
+    }
+  }
+  place-items: center;
+  margin-bottom: 4rem;
+  &__img {
+    padding: 3rem;
+  }
+
+  &__text {
+    padding: 3rem;
+    font-size: 1.5rem;
+  }
+}
