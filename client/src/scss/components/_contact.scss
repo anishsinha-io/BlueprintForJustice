@@ -62,3 +62,9 @@
   border-radius: 2rem;
   width: 50%;
 }
+
+.error-border {
+  border: 2px solid rgba(204, 0, 0, 1);
+  background-color: rgba(204, 0, 0, 0.2);
+  color: $light-gray;
+}

@@ -1,5 +1,5 @@
 .app-footer {
-  padding: 1rem;
+  // padding: 1rem;
   display: grid;
   background-color: $dark-gray;
   color: $light-gray;
@@ -93,4 +93,35 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 0.5rem;
+}
+
+.signup-inputs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  & > input {
+    font-size: 1rem;
+    height: 3rem;
+    width: 18rem;
+    border-radius: 2rem;
+    border: 0;
+    padding: 1rem;
+  }
+  &__error {
+    border: 2px solid rgba(204, 0, 0, 1);
+    background-color: rgba(204, 0, 0, 0.2);
+    color: $light-gray;
+  }
+}
+
+.community-signup {
+  &__input {
+    position: relative;
+  }
+}
+
+.email-error {
+  max-width: 75%;
+  position: absolute;
+  top: 5rem;
 }
