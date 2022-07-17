@@ -1,4 +1,19 @@
-import { useContext } from "react";
+/** Blueprint For Justice
+ ** Copyright (C) 2022 Anish Sinha
+ **
+ ** This program is free software: you can redistribute it and/or modify
+ ** it under the terms of the GNU General Public License as published by
+ ** the Free Software Foundation, either version 3 of the License, or
+ ** (at your option) any later version.
+ **
+ ** This program is distributed in the hope that it will be useful,
+ ** but WITHOUT ANY WARRANTY; without even the implied warranty of
+ ** MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ ** GNU General Public License for more details.
+ **
+ ** You should have received a copy of the GNU General Public License
+ ** along with this program.  If not, see http://www.gnu.org/licenses/.
+ **/
 
 import BreonnaTaylor from "assets/breonna-taylor-img-asset.jpeg";
 import GeorgeFloyd from "assets/george-floyd-img-asset.png";
@@ -16,13 +31,10 @@ import { ReactComponent as MediaPreparednessIcon } from "assets/resource-icons/m
 import { ReactComponent as GeneralResourcesIcon } from "assets/resource-icons/general-resources.svg";
 
 import Card from "components/Reusables/Card";
-import SettingsCtx from "components/ctx";
 
 import { ReactComponent as MainLogoDark } from "assets/svg/blackmothersfilm-logo-dark.svg";
 
 const Resources = () => {
-  const ctx = useContext(SettingsCtx);
-
   const cards = [
     {
       label: "Healing and Support",
@@ -97,11 +109,11 @@ const Resources = () => {
         <div className="resources-description">
           <h2>Resources</h2>
           <p>
-            We’ve prepared a list of resources for mothers and family members
-            who find themselves in these unimaginable situations. Below, you’ll
-            find the tools you’ll need to get prepared to talk to the media,
+            We've prepared a list of resources for mothers and family members
+            who find themselves in these unimaginable situations. Below, you'll
+            find the tools you'll need to get prepared to talk to the media,
             find legal resources, and organizations on the local and national
-            level. You’ll also find stories of triumph and strength from the
+            level. You'll also find stories of triumph and strength from the
             Mothers of the Movement.
           </p>
         </div>
