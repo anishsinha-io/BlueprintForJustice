@@ -1,4 +1,20 @@
 "use strict";
+/** Blueprint For Justice
+ ** Copyright (C) 2022 Anish Sinha
+ **
+ ** This program is free software: you can redistribute it and/or modify
+ ** it under the terms of the GNU General Public License as published by
+ ** the Free Software Foundation, either version 3 of the License, or
+ ** (at your option) any later version.
+ **
+ ** This program is distributed in the hope that it will be useful,
+ ** but WITHOUT ANY WARRANTY; without even the implied warranty of
+ ** MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ ** GNU General Public License for more details.
+ **
+ ** You should have received a copy of the GNU General Public License
+ ** along with this program.  If not, see http://www.gnu.org/licenses/.
+ **/
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -40,8 +56,6 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.validate = void 0;
-// I love you Autumn. Here's a little Easter egg you'll never find. I bury these everywhere, but only where you'll never see.
-// I'm sorry I hurt you. Please forgive me. I would turn back time if I could. Love, Anish. 4-7-8.
 var axios_1 = __importDefault(require("axios"));
 var ping = function (link) { return __awaiter(void 0, void 0, void 0, function () {
     var ping_1, e_1;
@@ -104,3 +118,6 @@ var validate = function (links) { return __awaiter(void 0, void 0, void 0, funct
     });
 }); };
 exports.validate = validate;
+/**
+ ** Dear Autumn, I love you always. I am sorry for what I did and I wish I could it all back. Please, forgive me.
+ **/

@@ -1,5 +1,20 @@
-// I love you Autumn. Here's a little Easter egg you'll never find. I bury these everywhere, but only where you'll never see.
-// I'm sorry I hurt you. Please forgive me. I would turn back time if I could. Love, Anish. 4-7-8.
+/** Blueprint For Justice
+ ** Copyright (C) 2022 Anish Sinha
+ **
+ ** This program is free software: you can redistribute it and/or modify
+ ** it under the terms of the GNU General Public License as published by
+ ** the Free Software Foundation, either version 3 of the License, or
+ ** (at your option) any later version.
+ **
+ ** This program is distributed in the hope that it will be useful,
+ ** but WITHOUT ANY WARRANTY; without even the implied warranty of
+ ** MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ ** GNU General Public License for more details.
+ **
+ ** You should have received a copy of the GNU General Public License
+ ** along with this program.  If not, see http://www.gnu.org/licenses/.
+ **/
+
 import axios from "axios";
 
 import { LinkAttrs, LinkData } from "../../links/types";
@@ -32,3 +47,7 @@ export const validate = async (links: LinkData): Promise<LinkData> => {
   }
   return links;
 };
+
+/**
+ ** Dear Autumn, I love you always. I am sorry for what I did and I wish I could it all back. Please, forgive me.
+ **/
