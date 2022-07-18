@@ -35,7 +35,7 @@ const HealingResource = () => {
 
   const getLinks = async () => {
     const res = await axios.get(
-      `${getBaseUrl()}/api/resources/validate-links?resource=healing`
+      `${getBaseUrl()}/resources/validate-links?resource=healing`
     );
     const data = await res.data;
     setLinkData(data);

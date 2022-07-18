@@ -132,7 +132,7 @@ const Footer = () => {
                   setEmail(() => "");
                   return;
                 }
-                await axios.post(`${getBaseUrl()}/api/mail/signup`, {
+                await axios.post(`${getBaseUrl()}/mail/signup`, {
                   email,
                 });
                 setAlert(() => ({

@@ -194,7 +194,7 @@ const Contact = () => {
                   }));
                   return;
                 }
-                await axios.post(`${getBaseUrl()}/api/mail/contact`, data);
+                await axios.post(`${getBaseUrl()}/mail/contact`, data);
                 window.scrollTo(0, 0);
                 setAlert(() => ({
                   show: true,

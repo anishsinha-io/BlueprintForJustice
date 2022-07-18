@@ -35,7 +35,7 @@ const Law101Resource = () => {
 
   const getLinks = async () => {
     const res = await axios.get(
-      `${getBaseUrl()}/api/resources/validate-links?resource=legal`
+      `${getBaseUrl()}/resources/validate-links?resource=legal`
     );
     const data = await res.data;
     setLinkData(data);

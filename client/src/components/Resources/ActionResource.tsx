@@ -34,7 +34,7 @@ const ActionResource = () => {
 
   const getLinks = async () => {
     const res = await axios.get(
-      `${getBaseUrl()}/api/resources/validate-links?resource=action`
+      `${getBaseUrl()}/resources/validate-links?resource=action`
     );
     const data = await res.data;
     setLinkData(data);

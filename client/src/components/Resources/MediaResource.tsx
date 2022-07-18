@@ -35,7 +35,7 @@ const MediaResource = () => {
 
   const getLinks = async () => {
     const res = await axios.get(
-      `${getBaseUrl()}/api/resources/validate-links?resource=media`
+      `${getBaseUrl()}/resources/validate-links?resource=media`
     );
     const data = await res.data;
     setLinkData(data);

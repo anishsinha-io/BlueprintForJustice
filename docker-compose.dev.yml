@@ -39,6 +39,7 @@ services:
   nginx:
     build:
       context: ./nginx
+      dockerfile: Dockerfile.dev
     depends_on:
       - api
       - client

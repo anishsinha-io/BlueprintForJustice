@@ -1,5 +1,5 @@
-export const devBaseUrl = "http://localhost:3000/";
-export const prodBaseUrl = "https://blueprintforjustice.com/";
+export const devBaseUrl = "http://localhost:8080/api";
+export const prodBaseUrl = "https://blueprintforjustice.com/api";
 
 const getBaseUrl = (): string => {
   if (process.env.NODE_ENV === "development") return devBaseUrl;
