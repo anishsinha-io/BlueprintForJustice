@@ -17,6 +17,7 @@
 
 import express from "express";
 import cors from "cors";
+import rateLimit from "express-rate-limit";
 
 import resourcesRouter from "./api/routes/resources-router";
 import mailRouter from "./api/routes/mail-router";
@@ -25,6 +26,15 @@ const app = express();
 
 app.use(cors());
 app.use(express.json());
+
+const limiter = rateLimit({
+  windowMs: 15 * 60 * 1000,
+  max: 100,
+  standardHeaders: true,
+  legacyHeaders: false,
+});
+
+app.use(limiter);
 
 app.use("/api/resources", resourcesRouter);
 app.use("/api/mail", mailRouter);

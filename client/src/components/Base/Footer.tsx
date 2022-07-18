@@ -28,6 +28,7 @@ import { ReactComponent as XIcon } from "assets/svg/x-icon.svg";
 import Button from "components/Reusables/Button";
 
 import SettingsCtx from "components/ctx";
+import getBaseUrl from "config";
 
 const validateEmail = (email: string) => {
   const emailRegex =
@@ -131,7 +132,7 @@ const Footer = () => {
                   setEmail(() => "");
                   return;
                 }
-                await axios.post(`http://localhost:8080/api/mail/signup`, {
+                await axios.post(`${getBaseUrl()}/api/mail/signup`, {
                   email,
                 });
                 setAlert(() => ({

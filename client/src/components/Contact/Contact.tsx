@@ -20,6 +20,7 @@ import { useEffect, useState } from "react";
 import Button from "components/Reusables/Button";
 import { ReactComponent as XIcon } from "assets/svg/x-icon.svg";
 import axios from "axios";
+import getBaseUrl from "config";
 
 interface ContactData {
   firstName: string;
@@ -193,10 +194,7 @@ const Contact = () => {
                   }));
                   return;
                 }
-                await axios.post(
-                  `http://localhost:8080/api/mail/contact`,
-                  data
-                );
+                await axios.post(`${getBaseUrl()}/api/mail/contact`, data);
                 window.scrollTo(0, 0);
                 setAlert(() => ({
                   show: true,

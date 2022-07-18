@@ -25,6 +25,8 @@ import SettingsCtx from "components/ctx";
 
 import ResourceLoading from "components/Resources/ResourceLoading";
 
+import getBaseUrl from "config";
+
 const HealingResource = () => {
   const ctx = useContext(SettingsCtx);
 
@@ -33,7 +35,7 @@ const HealingResource = () => {
 
   const getLinks = async () => {
     const res = await axios.get(
-      "http://localhost:8080/api/resources/validate-links?resource=healing"
+      `${getBaseUrl()}/api/resources/validate-links?resource=healing`
     );
     const data = await res.data;
     setLinkData(data);

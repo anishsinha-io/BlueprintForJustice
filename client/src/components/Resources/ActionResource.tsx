@@ -25,6 +25,8 @@ import ResourceLoading from "components/Resources/ResourceLoading";
 
 import SettingsCtx from "components/ctx";
 
+import getBaseUrl from "config";
+
 const ActionResource = () => {
   const ctx = useContext(SettingsCtx);
   const [linkData, setLinkData] = useState<LinkData>({});
@@ -32,7 +34,7 @@ const ActionResource = () => {
 
   const getLinks = async () => {
     const res = await axios.get(
-      "http://localhost:8080/api/resources/validate-links?resource=action"
+      `${getBaseUrl()}/api/resources/validate-links?resource=action`
     );
     const data = await res.data;
     setLinkData(data);

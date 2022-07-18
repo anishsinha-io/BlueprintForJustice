@@ -25,6 +25,8 @@ import ResourceLoading from "components/Resources/ResourceLoading";
 
 import SettingsCtx from "components/ctx";
 
+import getBaseUrl from "config";
+
 const CommunityResource = () => {
   const ctx = useContext(SettingsCtx);
   const [linkData, setLinkData] = useState<LinkData>({});
@@ -32,7 +34,7 @@ const CommunityResource = () => {
 
   const getLinks = async () => {
     const res = await axios.get(
-      "http://localhost:8080/api/resources/validate-links?resource=community"
+      `${getBaseUrl()}/api/resources/validate-links?resource=community`
     );
     const data = await res.data;
     setLinkData(data);

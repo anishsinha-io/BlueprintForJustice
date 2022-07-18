@@ -25,6 +25,8 @@ import ResourceLoading from "components/Resources/ResourceLoading";
 
 import SettingsCtx from "components/ctx";
 
+import getBaseUrl from "config";
+
 const MediaResource = () => {
   const ctx = useContext(SettingsCtx);
 
@@ -33,7 +35,7 @@ const MediaResource = () => {
 
   const getLinks = async () => {
     const res = await axios.get(
-      "http://localhost:8080/api/resources/validate-links?resource=media"
+      `${getBaseUrl()}/api/resources/validate-links?resource=media`
     );
     const data = await res.data;
     setLinkData(data);

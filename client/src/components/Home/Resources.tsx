@@ -94,6 +94,7 @@ const Resources = () => {
 
   const cardsHtml = cards.map((card: any) => (
     <Card
+      key={card.link}
       label={card.label}
       imgSrc={card.imgSrc}
       imgAlt={card.imgAlt}
