@@ -1,4 +1,4 @@
-export const devBaseUrl = "http://localhost:8080/api";
+export const devBaseUrl = "http://localhost/api";
 export const prodBaseUrl = "https://blueprintforjustice.com/api";
 
 const getBaseUrl = (): string => {

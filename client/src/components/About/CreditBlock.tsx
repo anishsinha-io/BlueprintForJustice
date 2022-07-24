@@ -15,21 +15,32 @@
  ** along with this program.  If not, see http://www.gnu.org/licenses/.
  **/
 
-import React from "react";
+import { useContext } from "react";
+
+import SettingsCtx from "components/ctx";
 
 const CreditBlock: React.FC<{
   title: string;
   name: string;
   href?: string;
-}> = ({ title, name, href }) => {
+  email?: string;
+}> = ({ title, name, href, email }) => {
+  const ctx = useContext(SettingsCtx);
   return (
-    <div className="credit-block">
-      <div className="credit-block__title">{title}</div>
+    <div className={`credit-block ${ctx.darkmode && `credit-block--dark`}`}>
       <div className="credit-block__name">{name}</div>
-      <div className="credit-block__website">
-        <a href={href || ""} target="_blank" rel="noreferrer">
-          Website
-        </a>
+      <div className="credit-block__title">{title}</div>
+      <div className="credit-block__info">
+        {href && (
+          <>
+            Website:{" "}
+            <a href={href} target="_blank" rel="noreferrer">
+              {href}
+            </a>
+            <br />
+          </>
+        )}
+        Email: {email}
       </div>
     </div>
   );

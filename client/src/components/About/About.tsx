@@ -63,15 +63,15 @@ const About = () => {
           resources for ease of access.
         </div>
         <div className="app-about__team">
-          <h1 className="about-team">Our Team</h1>
+          <h1 className="about-team">Featured Mothers</h1>
           Comprised of professionals versed in all facets of UX - we share a
           sense of community, united in a desire to give back.
         </div>
       </div>
       <div className="about-body">
-        <div className="about-body__cards">{foundersCards}</div>
-        {/* <Credits /> */}
+        <div className="about--cards">{foundersCards}</div>
       </div>
+      <Credits />
     </section>
   );
 };

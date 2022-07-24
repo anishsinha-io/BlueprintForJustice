@@ -21,17 +21,47 @@ import CreditBlock from "components/About/CreditBlock";
 import websiteTeam from "components/About/websiteTeam";
 
 const Credits = () => {
-  const websiteBlocks = websiteTeam.map(
-    (member: { title: string; name: string; href?: string }) => (
-      <CreditBlock title={member.title} name={member.name} href={member.href} />
-    )
-  );
   return (
     <div className="app-credits">
-      <div className="credit-container">{websiteBlocks}</div>
-      <div className="credit-container">{websiteBlocks}</div>
-      <div className="credit-container">{websiteBlocks}</div>
-      <div className="credit-container">{websiteBlocks}</div>
+      <div className="app-credits__title">
+        <h1>Development Team</h1>
+      </div>
+      <div className="app-credits__lead">
+        <CreditBlock
+          name="Jacqueline Vo"
+          href="https://github.com/anish-sinha1"
+          title="Project Lead"
+          email="jackieqvo@gmail.com"
+        />
+      </div>
+      <div className="app-credits__eng">
+        <CreditBlock
+          name="Anish Sinha"
+          href="https://github.com/anish-sinha1"
+          title="Lead Software Engineer"
+          email="anishsinha0128@gmail.com"
+        />
+      </div>
+      <div className="app-credits__design">
+        <CreditBlock
+          name="Alyssa Guo"
+          href="https://github.com/anish-sinha1"
+          title="UX Designer and Content Writer"
+          email="jackieqvo@gmail.com"
+        />
+        <CreditBlock
+          name="Satveer Singh"
+          href="https://github.com/anish-sinha1"
+          title="UX Designer and Content Writer"
+          email="jackieqvo@gmail.com"
+        />
+        <CreditBlock
+          name="Sai Ravi"
+          href="https://github.com/anish-sinha1"
+          title="UX Designer"
+          email="jackieqvo@gmail.com"
+        />
+      </div>
     </div>
   );
 };

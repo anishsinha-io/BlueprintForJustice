@@ -20,7 +20,7 @@ import { useNavigate } from "react-router-dom";
 
 import Heading from "components/Home/Heading";
 import Resources from "components/Home/Resources";
-import BlueprintInAction from "components/Home/BlueprintInAction";
+import Stories from "components/Home/Stories";
 
 import SettingsCtx from "components/ctx";
 
@@ -32,7 +32,7 @@ const Home = () => {
     <section className="app-home">
       <Heading />
       <Resources />
-      <BlueprintInAction />
+      <Stories />
     </section>
   );
 };

@@ -35,7 +35,7 @@
     gap: 1rem;
     @media screen and (max-width: $medium-screen-width) {
       padding-bottom: 2rem;
-      border-bottom: 1px solid $light-gray;
+      // border-bottom: 1px solid $light-gray;
     }
   }
   &__signup {
@@ -48,6 +48,9 @@
     @media screen and (max-width: $medium-screen-width) {
       margin-top: 2rem;
       justify-self: center;
+    }
+    @media screen and (max-width: $mobile-width) {
+      width: 85%;
     }
   }
 }
