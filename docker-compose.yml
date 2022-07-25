@@ -21,7 +21,6 @@ services:
     stdin_open: true
     build:
       context: ./client
-      dockerfile: Dockerfile
     ports:
       - "3000:3000"
     volumes:
@@ -30,7 +29,6 @@ services:
   api:
     build:
       context: ./server
-      dockerfile: Dockerfile.dev
     ports:
       - "8080:8080"
     volumes:
@@ -39,7 +37,6 @@ services:
   nginx:
     build:
       context: ./nginx
-      dockerfile: Dockerfile.dev
     depends_on:
       - api
       - client
