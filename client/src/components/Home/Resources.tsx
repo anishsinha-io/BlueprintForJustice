@@ -102,6 +102,7 @@ const Resources = () => {
       title={card.title}
       link={card.link}
       cover={card.cover}
+      size="md"
     />
   ));
   return (

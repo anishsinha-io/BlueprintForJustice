@@ -81,7 +81,7 @@ const App = () => {
               element={<BaseResourcePage category="community" />}
             />
           </Routes>
-          <Footer />
+          {/* <Footer /> */}
         </section>
       </SettingsCtx.Provider>
     </Router>

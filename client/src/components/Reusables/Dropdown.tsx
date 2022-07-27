@@ -20,8 +20,9 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 export interface DropdownAttrs {
-  text: string;
+  text?: string;
   href: string;
+  component?: any;
 }
 
 const Dropdown: React.FC<{
@@ -29,7 +30,9 @@ const Dropdown: React.FC<{
   items: DropdownAttrs[];
   className?: string;
   children?: any;
-}> = ({ title, items, className, children }) => {
+  icon?: any;
+  justify?: "left" | "right" | "center";
+}> = ({ title, items, className, children, icon: Icon, justify }) => {
   const [active, setActive] = useState<boolean>(false);
   const options = items.map((item: DropdownAttrs) => (
     <div key={item.href}>
@@ -39,18 +42,18 @@ const Dropdown: React.FC<{
 
   return (
     <div
-      className={`app-dropdown ${className}`}
+      className={`app-dropdown ${className} app-dropdown--${justify}`}
       onMouseEnter={() => setActive(() => true)}
       onMouseLeave={() => setActive(() => false)}
     >
       <div className={`app-dropdown__title ${className}__title`}>
-        {title || ""}
+        {Icon ? <Icon /> : title}
       </div>
       {children}
       <div
         className={`app-dropdown__options ${className}__options ${
           active ? "" : "hidden"
-        }`}
+        } app-dropdown__options--${justify}`}
       >
         {options}
       </div>
