@@ -20,6 +20,4 @@ WORKDIR /usr/app
 COPY package.json .
 RUN yarn
 COPY . .
-RUN yarn build
-RUN yarn global add serve
-CMD ["serve", "-s", "build"]
+CMD ["yarn", "start"]
