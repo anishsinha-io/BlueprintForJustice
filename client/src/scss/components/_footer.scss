@@ -35,7 +35,6 @@
     gap: 1rem;
     @media screen and (max-width: $medium-screen-width) {
       padding-bottom: 2rem;
-      // border-bottom: 1px solid $light-gray;
     }
   }
   &__signup {
@@ -93,6 +92,10 @@
 }
 
 .input-signup {
+  @media screen and (max-width: $mobile-width) {
+    margin-left: 0;
+  }
+
   margin-left: 0.5rem;
   height: 3rem;
   width: 8rem;
@@ -103,6 +106,10 @@
   font-size: 1rem;
   height: 3rem;
   width: 18rem;
+  @media screen and (max-width: $mobile-width) {
+    height: 2rem;
+    width: 10rem;
+  }
   border-radius: 2rem;
   border: 0;
   padding: 1rem;
@@ -111,13 +118,16 @@
 .title-icons {
   width: 50%;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 0.5rem;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 1.25rem;
 }
 
 .signup-inputs {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  @media screen and (max-width: $mobile-width) {
+    grid-template-columns: 1fr;
+  }
   gap: 1rem;
   & > input {
     font-size: 1rem;

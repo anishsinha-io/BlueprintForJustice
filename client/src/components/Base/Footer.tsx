@@ -24,10 +24,16 @@ import { ReactComponent as FacebookIcon } from "assets/svg/facebook-icon.svg";
 import { ReactComponent as TwitterIcon } from "assets/svg/twitter-icon.svg";
 import { ReactComponent as InstagramIcon } from "assets/svg/instagram-icon.svg";
 import { ReactComponent as XIcon } from "assets/svg/x-icon.svg";
+import { ReactComponent as LightModeSun } from "assets/svg/light-mode.svg";
+import { ReactComponent as DarkModeMoon } from "assets/svg/dark-mode.svg";
 
 import Button from "components/Reusables/Button";
+import Switch from "components/Reusables/Switch";
 
-import SettingsCtx from "components/ctx";
+import SettingsCtx, {
+  setDarkModeSetting,
+  getDarkModeSetting,
+} from "components/ctx";
 import getBaseUrl from "config";
 
 const validateEmail = (email: string) => {
@@ -38,7 +44,6 @@ const validateEmail = (email: string) => {
 
 const Footer = () => {
   const [email, setEmail] = useState<string>("");
-  const [invalid, setInvalid] = useState<boolean>(false);
   const [alert, setAlert] = useState<{
     show: boolean;
     msg: string;
@@ -48,6 +53,7 @@ const Footer = () => {
     msg: "",
   });
   const ctx = useContext(SettingsCtx);
+  const [toggled, setToggled] = useState<boolean>(ctx.darkmode);
   return (
     <div className={`app-footer ${ctx.darkmode ? "dark-mode" : ""}`}>
       <div className="app-footer__links">
@@ -84,21 +90,21 @@ const Footer = () => {
               Survey
             </Link>
           </div>
-        </div>
-        <div className="links-other">
-          <h2>Additional Information</h2>
-          <div className="link-container">
-            <a
-              className="resource-link"
-              href="https://blackmothersfilm.com"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Documentary
-            </a>
-            <Link to="/contact" className="resource-link">
-              Contact Us
-            </Link>
+          <div className="links-other">
+            <h2>Additional Information</h2>
+            <div className="link-container">
+              <a
+                className="resource-link"
+                href="https://blackmothersfilm.com"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Documentary
+              </a>
+              <Link to="/contact" className="resource-link">
+                Contact Us
+              </Link>
+            </div>
           </div>
         </div>
       </div>

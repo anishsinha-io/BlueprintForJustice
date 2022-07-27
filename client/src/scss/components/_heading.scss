@@ -68,6 +68,9 @@
     &.darkmode {
       color: $light-gray;
     }
+    @media screen and (max-width: $mobile-width) {
+      font-size: 0.75rem;
+    }
   }
   &__img {
     margin-left: 2rem;
@@ -76,5 +79,9 @@
     width: 100%;
     filter: brightness(0.4) grayscale(100);
     border-radius: 0.05rem;
+    @media screen and (max-width: $mobile-width) {
+      margin-left: 0;
+      margin-right: 0;
+    }
   }
 }
