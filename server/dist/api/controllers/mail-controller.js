@@ -104,7 +104,9 @@ var sendContactForm = function (req, res) { return __awaiter(void 0, void 0, voi
                 sendSmtpEmail.subject = "{{params.subject}}";
                 sendSmtpEmail.htmlContent = "<html><body><p>".concat(content, "</p> </body></html>");
                 sendSmtpEmail.sender = { name: "".concat(firstName, " ").concat(lastName), email: email };
-                sendSmtpEmail.to = [{ email: "adapoole34@gmail.com", name: "Ada Poole" }];
+                sendSmtpEmail.to = [
+                    { email: process.env.ADMIN_EMAIL_ADDRESS, name: "Ada Poole" },
+                ];
                 sendSmtpEmail.params = {
                     FNAME: firstName,
                     LNAME: lastName,

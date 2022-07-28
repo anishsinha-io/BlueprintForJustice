@@ -59,7 +59,9 @@ export const sendContactForm: RequestHandler = async (req, res) => {
   sendSmtpEmail.subject = "{{params.subject}}";
   sendSmtpEmail.htmlContent = `<html><body><p>${content}</p> </body></html>`;
   sendSmtpEmail.sender = { name: `${firstName} ${lastName}`, email: email };
-  sendSmtpEmail.to = [{ email: "adapoole34@gmail.com", name: "Ada Poole" }];
+  sendSmtpEmail.to = [
+    { email: process.env.ADMIN_EMAIL_ADDRESS, name: "Ada Poole" },
+  ];
   sendSmtpEmail.params = {
     FNAME: firstName,
     LNAME: lastName,
