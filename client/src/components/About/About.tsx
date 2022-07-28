@@ -1,9 +1,3 @@
-import React from "react";
-
-import Credits from "components/About/Credits";
-import CreditBlock from "components/About/CreditBlock";
-import Card from "components/Reusables/Card";
-
 /** Blueprint For Justice
  ** Copyright (C) 2022 Anish Sinha
  **
@@ -21,7 +15,10 @@ import Card from "components/Reusables/Card";
  ** along with this program.  If not, see http://www.gnu.org/licenses/.
  **/
 
+import Credits from "components/About/Credits";
+import Card from "components/Reusables/Card";
 import CommunityConnections from "assets/resource-images/community-connections.png";
+
 import { ReactComponent as MainLogoDark } from "assets/svg/blackmothersfilm-logo-dark.svg";
 
 import founders from "components/About/founders";

@@ -42,7 +42,7 @@
   gap: 4rem;
   place-items: center;
   padding: 1rem;
-  @media screen and (max-width: $large-screen-width) {
+  @media screen and (max-width: $medium-screen-width) {
     grid-template-columns: 1fr 1fr;
     gap: 1.5rem;
   }

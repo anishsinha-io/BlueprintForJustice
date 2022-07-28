@@ -16,24 +16,17 @@
  **/
 
 import { useContext, useState } from "react";
-
 import { Link } from "react-router-dom";
 import axios from "axios";
+
+import Button from "components/Reusables/Button";
 
 import { ReactComponent as FacebookIcon } from "assets/svg/facebook-icon.svg";
 import { ReactComponent as TwitterIcon } from "assets/svg/twitter-icon.svg";
 import { ReactComponent as InstagramIcon } from "assets/svg/instagram-icon.svg";
 import { ReactComponent as XIcon } from "assets/svg/x-icon.svg";
-import { ReactComponent as LightModeSun } from "assets/svg/light-mode.svg";
-import { ReactComponent as DarkModeMoon } from "assets/svg/dark-mode.svg";
 
-import Button from "components/Reusables/Button";
-import Switch from "components/Reusables/Switch";
-
-import SettingsCtx, {
-  setDarkModeSetting,
-  getDarkModeSetting,
-} from "components/ctx";
+import SettingsCtx from "components/ctx";
 import getBaseUrl from "config";
 
 const validateEmail = (email: string) => {
@@ -53,7 +46,6 @@ const Footer = () => {
     msg: "",
   });
   const ctx = useContext(SettingsCtx);
-  const [toggled, setToggled] = useState<boolean>(ctx.darkmode);
   return (
     <div className={`app-footer ${ctx.darkmode ? "dark-mode" : ""}`}>
       <div className="app-footer__links">
@@ -66,29 +58,31 @@ const Footer = () => {
           </div>
         </div>
         <div className="links-resource">
-          <h2>Resources</h2>
-          <div className={`link-container${ctx.darkmode ? "--dark" : ""}`}>
-            <Link to="/healing-and-support" className="resource-link">
-              Healing
-            </Link>
-            <Link to="/media-preparedness" className="resource-link">
-              Press
-            </Link>
-            <Link to="/community-connections" className="resource-link">
-              Community Building
-            </Link>
-            <Link to="/taking-action" className="resource-link">
-              Legislative Change
-            </Link>
-            <Link to="/legal-aid" className="resource-link">
-              Legal Aid
-            </Link>
-            <Link to="/general" className="resource-link">
-              General Resources
-            </Link>
-            <Link to="/questionnaire" className="resource-link">
-              Survey
-            </Link>
+          <div className="links-resource__block">
+            <h2>Resources</h2>
+            <div className={`link-container${ctx.darkmode ? "--dark" : ""}`}>
+              <Link to="/healing-and-support" className="resource-link">
+                Healing
+              </Link>
+              <Link to="/media-preparedness" className="resource-link">
+                Press
+              </Link>
+              <Link to="/community-connections" className="resource-link">
+                Community Building
+              </Link>
+              <Link to="/taking-action" className="resource-link">
+                Legislative Change
+              </Link>
+              <Link to="/legal-aid" className="resource-link">
+                Legal Aid
+              </Link>
+              <Link to="/general" className="resource-link">
+                General Resources
+              </Link>
+              <Link to="/questionnaire" className="resource-link">
+                Survey
+              </Link>
+            </div>
           </div>
           <div className="links-other">
             <h2>Additional Information</h2>
@@ -159,9 +153,7 @@ const Footer = () => {
               {alert.msg}
               <XIcon
                 className="alert-contact__exit"
-                onClick={() =>
-                  setAlert((current) => ({ show: false, msg: "" }))
-                }
+                onClick={() => setAlert(() => ({ show: false, msg: "" }))}
               />
             </div>
           )}

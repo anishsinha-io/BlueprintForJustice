@@ -15,8 +15,11 @@
  ** along with this program.  If not, see http://www.gnu.org/licenses/.
  **/
 
-import React, { useContext, useState } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
+
+import Switch from "components/Reusables/Switch";
+import Dropdown from "components/Reusables/Dropdown";
 
 import { ReactComponent as LightModeSun } from "assets/svg/light-mode.svg";
 import { ReactComponent as DarkModeMoon } from "assets/svg/dark-mode.svg";
@@ -24,9 +27,6 @@ import { ReactComponent as MainLogo } from "assets/svg/blackmothersfilm-logo.svg
 import { ReactComponent as MainLogoDark } from "assets/svg/blackmothersfilm-logo-dark.svg";
 import { ReactComponent as MenuIcon } from "assets/svg/menu-icon.svg";
 import { ReactComponent as MenuIconDark } from "assets/svg/menu-icon-dark.svg";
-
-import Switch from "components/Reusables/Switch";
-import Dropdown from "components/Reusables/Dropdown";
 
 import SettingsCtx, {
   setDarkModeSetting,
@@ -69,6 +69,17 @@ const Navbar = () => {
           className={`navbar-resources${ctx.darkmode ? "--dark" : ""}`}
         />
       </div>
+      <div className={`app-navbar__mobilemenu${ctx.darkmode ? "--dark" : ""} `}>
+        <Dropdown
+          items={[
+            { text: "About", href: "/about" },
+            { text: "Contact", href: "/contact" },
+          ]}
+          className={`mobile-options${ctx.darkmode ? "--dark" : ""}`}
+          icon={Icon}
+          justify="right"
+        />
+      </div>
       <div className={`app-navbar__switch`}>
         <div className="switch-container">
           <LightModeSun id="switch-sun" />
@@ -82,17 +93,6 @@ const Navbar = () => {
           />
           <DarkModeMoon id="switch-moon" />
         </div>
-      </div>
-      <div className={`app-navbar__mobilemenu${ctx.darkmode ? "--dark" : ""} `}>
-        <Dropdown
-          items={[
-            { text: "About", href: "/about" },
-            { text: "Contact", href: "/contact" },
-          ]}
-          className={`mobile-options${ctx.darkmode ? "--dark" : ""}`}
-          icon={Icon}
-          justify="right"
-        />
       </div>
     </div>
   );

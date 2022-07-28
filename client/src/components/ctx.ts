@@ -15,6 +15,10 @@
  ** along with this program.  If not, see http://www.gnu.org/licenses/.
  **/
 
+/*
+ * important note about settings: settings across domains won't carry over. for example, settings from https://blueprintforjustice.com/
+ * will not automatically carry over to https://www.blueprintforjustice.com/. this is not really important but is worth noting
+ */
 import React from "react";
 
 // add any other global user settings to this interface

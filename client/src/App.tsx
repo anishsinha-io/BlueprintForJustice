@@ -23,18 +23,16 @@ import About from "components/About/About";
 import Navbar from "components/Base/Navbar";
 import Footer from "components/Base/Footer";
 import Contact from "components/Contact/Contact";
-
 import BaseResourcePage from "components/Resources/BaseResourcePage";
-
-import SettingsCtx, {
-  getDarkModeSetting,
-  getPromptQuestionnaire,
-} from "components/ctx";
-
 import Questionnaire from "components/Questionnaire/Questionnaire";
 
+import SettingsCtx, { getPromptQuestionnaire } from "components/ctx";
+
 const App = () => {
-  const darkModeSetting: boolean = getDarkModeSetting();
+  // get the user's dark mode preference
+  const darkModeSetting: boolean =
+    window.matchMedia &&
+    window.matchMedia("(prefers-color-scheme: dark)").matches;
   const [darkmode, setDarkmode] = useState<boolean>(darkModeSetting);
   const [promptQuestionnaire, setPromptQuestionnaire] = useState<boolean>(
     getPromptQuestionnaire()

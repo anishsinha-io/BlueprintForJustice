@@ -16,11 +16,12 @@
  **/
 
 import { useEffect, useState } from "react";
+import axios from "axios";
 
 import Button from "components/Reusables/Button";
-import { ReactComponent as XIcon } from "assets/svg/x-icon.svg";
-import axios from "axios";
 import getBaseUrl from "config";
+
+import { ReactComponent as XIcon } from "assets/svg/x-icon.svg";
 
 interface ContactData {
   firstName: string;
