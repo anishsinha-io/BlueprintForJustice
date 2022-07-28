@@ -26,9 +26,9 @@ import GeneralResources from "assets/resource-images/general-resources.png";
 import { ReactComponent as HealingIcon } from "assets/resource-icons/healing.svg";
 import { ReactComponent as CommunityConnectionsIcon } from "assets/resource-icons/community-connections.svg";
 import { ReactComponent as TakingActionIcon } from "assets/resource-icons/taking-action.svg";
-import { ReactComponent as LegalAidIcon } from "assets/resource-icons/legal-aid.svg";
-import { ReactComponent as MediaPreparednessIcon } from "assets/resource-icons/media-preparedness.svg";
-import { ReactComponent as GeneralResourcesIcon } from "assets/resource-icons/general-resources.svg";
+import { ReactComponent as LegalIcon } from "assets/resource-icons/legal.svg";
+import { ReactComponent as MediaIcon } from "assets/resource-icons/media.svg";
+import { ReactComponent as GeneralIcon } from "assets/resource-icons/general.svg";
 
 import Card from "components/Reusables/Card";
 
@@ -70,7 +70,7 @@ const Resources = () => {
       icon: MainLogoDark,
       title: "Legal Aid",
       link: "/legal-aid",
-      cover: LegalAidIcon,
+      cover: LegalIcon,
     },
     {
       label: "Media Preparedness",
@@ -79,7 +79,7 @@ const Resources = () => {
       icon: MainLogoDark,
       title: "Media Preparedness",
       link: "/media-preparedness",
-      cover: MediaPreparednessIcon,
+      cover: MediaIcon,
     },
     {
       label: "General Resources",
@@ -88,7 +88,7 @@ const Resources = () => {
       icon: MainLogoDark,
       title: "General Resources",
       link: "/general",
-      cover: GeneralResourcesIcon,
+      cover: GeneralIcon,
     },
   ];
 

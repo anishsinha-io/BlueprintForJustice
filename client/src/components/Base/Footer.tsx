@@ -47,119 +47,126 @@ const Footer = () => {
   });
   const ctx = useContext(SettingsCtx);
   return (
-    <div className={`app-footer ${ctx.darkmode ? "dark-mode" : ""}`}>
-      <div className="app-footer__links">
-        <div className="links-header">
-          <h1>Blueprint for Justice</h1>
-          <div className="title-icons">
-            <FacebookIcon className="flex-icon" />
-            <TwitterIcon className="flex-icon" />
-            <InstagramIcon className="flex-icon" />
-          </div>
-        </div>
-        <div className="links-resource">
-          <div className="links-resource__block">
-            <h2>Resources</h2>
-            <div className={`link-container${ctx.darkmode ? "--dark" : ""}`}>
-              <Link to="/healing-and-support" className="resource-link">
-                Healing
-              </Link>
-              <Link to="/media-preparedness" className="resource-link">
-                Press
-              </Link>
-              <Link to="/community-connections" className="resource-link">
-                Community Building
-              </Link>
-              <Link to="/taking-action" className="resource-link">
-                Legislative Change
-              </Link>
-              <Link to="/legal-aid" className="resource-link">
-                Legal Aid
-              </Link>
-              <Link to="/general" className="resource-link">
-                General Resources
-              </Link>
-              <Link to="/questionnaire" className="resource-link">
-                Survey
-              </Link>
+    <>
+      <div className={`app-footer ${ctx.darkmode ? "dark-mode" : ""}`}>
+        <div className="app-footer__links">
+          <div className="links-header">
+            <h1>Blueprint for Justice</h1>
+            <div className="title-icons">
+              <FacebookIcon className="flex-icon" />
+              <TwitterIcon className="flex-icon" />
+              <InstagramIcon className="flex-icon" />
             </div>
           </div>
-          <div className="links-other">
-            <h2>Additional Information</h2>
-            <div className="link-container">
-              <a
-                className="resource-link"
-                href="https://blackmothersfilm.com"
-                target="_blank"
-                rel="noreferrer"
-              >
-                Documentary
-              </a>
-              <Link to="/contact" className="resource-link">
-                Contact Us
-              </Link>
+          <div className="links-resource">
+            <div className="links-resource__block">
+              <h2>Resources</h2>
+              <div className={`link-container${ctx.darkmode ? "--dark" : ""}`}>
+                <Link to="/healing-and-support" className="resource-link">
+                  Healing
+                </Link>
+                <Link to="/media-preparedness" className="resource-link">
+                  Press
+                </Link>
+                <Link to="/community-connections" className="resource-link">
+                  Community Building
+                </Link>
+                <Link to="/taking-action" className="resource-link">
+                  Legislative Change
+                </Link>
+                <Link to="/legal-aid" className="resource-link">
+                  Legal Aid
+                </Link>
+                <Link to="/general" className="resource-link">
+                  General Resources
+                </Link>
+                <Link to="/questionnaire" className="resource-link">
+                  Survey
+                </Link>
+              </div>
+            </div>
+            <div className="links-other">
+              <h2>Additional Information</h2>
+              <div className="link-container">
+                <a
+                  className="resource-link"
+                  href="https://blackmothersfilm.com"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Documentary
+                </a>
+                <Link to="/contact" className="resource-link">
+                  Contact Us
+                </Link>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <div className="app-footer__signup">
-        <h2>Sign up to join our community</h2>
-        <div className="community-signup__input">
-          <div className="signup-inputs">
-            <input
-              type="email"
-              placeholder="Email"
-              className={`email-input ${
-                alert.show && alert.status === "error"
-                  ? "email-input__error"
-                  : ""
-              }`}
-              value={email}
-              onChange={(e: any) => {
-                setEmail(() => e.target.value);
-              }}
-            />
-            <Button
-              className="btn btn-signup input-signup"
-              text="Sign Up"
-              onClick={async () => {
-                if (!validateEmail(email)) {
-                  setAlert((current) => ({
+        <div className="app-footer__signup">
+          <h2>Sign up to join our community</h2>
+          <div className="community-signup__input">
+            <div className="signup-inputs">
+              <input
+                type="email"
+                placeholder="Email"
+                className={`email-input ${
+                  alert.show && alert.status === "error"
+                    ? "email-input__error"
+                    : ""
+                }`}
+                value={email}
+                onChange={(e: any) => {
+                  setEmail(() => e.target.value);
+                }}
+              />
+              <Button
+                className="btn btn-signup input-signup"
+                text="Sign Up"
+                onClick={async () => {
+                  if (!validateEmail(email)) {
+                    setAlert((current) => ({
+                      show: true,
+                      msg: "Invalid email. Try again.",
+                      status: "error",
+                    }));
+                    setEmail(() => "");
+                    return;
+                  }
+                  await axios.post(`${getBaseUrl()}/mail/signup`, {
+                    email,
+                  });
+                  setAlert(() => ({
                     show: true,
-                    msg: "Invalid email. Try again.",
-                    status: "error",
+                    msg: "Success!",
+                    status: "success",
                   }));
                   setEmail(() => "");
-                  return;
-                }
-                await axios.post(`${getBaseUrl()}/mail/signup`, {
-                  email,
-                });
-                setAlert(() => ({
-                  show: true,
-                  msg: "Success!",
-                  status: "success",
-                }));
-                setEmail(() => "");
-              }}
-            />
-          </div>
-          {alert.show && (
-            <div
-              className={`email-error alert-contact alert-contact${
-                alert.show && alert.status === "error" ? "__error" : "__success"
-              }`}
-            >
-              {alert.msg}
-              <XIcon
-                className="alert-contact__exit"
-                onClick={() => setAlert(() => ({ show: false, msg: "" }))}
+                }}
               />
             </div>
-          )}
+            {alert.show && (
+              <div
+                className={`email-error alert-contact alert-contact${
+                  alert.show && alert.status === "error"
+                    ? "__error"
+                    : "__success"
+                }`}
+              >
+                {alert.msg}
+                <XIcon
+                  className="alert-contact__exit"
+                  onClick={() => setAlert(() => ({ show: false, msg: "" }))}
+                />
+              </div>
+            )}
+          </div>
+        </div>
+        <div id="copyright">
+          Copyright &copy; Blueprint For Justice. All Rights Reserved.
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
