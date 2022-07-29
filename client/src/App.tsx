@@ -26,13 +26,17 @@ import Contact from "components/Contact/Contact";
 import BaseResourcePage from "components/Resources/BaseResourcePage";
 import Questionnaire from "components/Questionnaire/Questionnaire";
 
-import SettingsCtx, { getPromptQuestionnaire } from "components/ctx";
+import SettingsCtx, {
+  getPromptQuestionnaire,
+  getDarkModeSetting,
+} from "components/ctx";
 
 const App = () => {
   // get the user's dark mode preference
-  const darkModeSetting: boolean =
-    window.matchMedia &&
-    window.matchMedia("(prefers-color-scheme: dark)").matches;
+  const darkModeSetting: boolean = localStorage.getItem("darkmode")
+    ? getDarkModeSetting()
+    : window.matchMedia &&
+      window.matchMedia("(prefers-color-scheme: dark)").matches;
   const [darkmode, setDarkmode] = useState<boolean>(darkModeSetting);
   const [promptQuestionnaire, setPromptQuestionnaire] = useState<boolean>(
     getPromptQuestionnaire()

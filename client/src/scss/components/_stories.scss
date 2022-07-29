@@ -24,6 +24,7 @@
   &__img {
     display: grid;
     justify-items: center;
+    position: relative;
   }
   &__description {
     display: grid;
@@ -38,6 +39,11 @@
   width: 80%;
   border-radius: 1rem;
   filter: grayscale(100);
+  &--overlay {
+    border: 2px solid $white;
+    filter: brightness(0.5) grayscale(100);
+    cursor: pointer;
+  }
 }
 
 .stories-description {
@@ -45,5 +51,16 @@
   @media screen and (max-width: $medium-screen-width) {
     width: 80%;
     text-align: center;
+  }
+}
+
+.film-link {
+  position: absolute;
+  text-align: center;
+  margin: 0 auto;
+  top: 40%;
+  width: 10%;
+  &--hidden {
+    display: none;
   }
 }
