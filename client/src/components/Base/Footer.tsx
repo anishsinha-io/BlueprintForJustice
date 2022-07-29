@@ -104,7 +104,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="app-footer__signup">
-          <h2>Sign up to join our community</h2>
+          <h2 className="signup-title">Sign up to join our community</h2>
           <div className="community-signup__input">
             <div className="signup-inputs">
               <input
