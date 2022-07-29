@@ -53,9 +53,27 @@ const Footer = () => {
           <div className="links-header">
             <h1>Blueprint for Justice</h1>
             <div className="title-icons">
-              <FacebookIcon className="flex-icon" />
-              <TwitterIcon className="flex-icon" />
-              <InstagramIcon className="flex-icon" />
+              <a
+                href="https://blackmothersfilm.com/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <FacebookIcon className="flex-icon" />
+              </a>
+              <a
+                href="https://blackmothersfilm.com/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <TwitterIcon className="flex-icon" />
+              </a>
+              <a
+                href="https://blackmothersfilm.com/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <InstagramIcon className="flex-icon" />
+              </a>
             </div>
           </div>
           <div className="links-resource">

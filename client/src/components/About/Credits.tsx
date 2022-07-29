@@ -26,8 +26,8 @@ const Credits = () => {
       <div className="app-credits__lead">
         <CreditBlock
           name="Jacqueline Vo"
-          href="https://github.com/anish-sinha1"
-          title="Project Lead"
+          href=""
+          title="Product Manager"
           email="jackieqvo@gmail.com"
         />
       </div>
@@ -42,21 +42,21 @@ const Credits = () => {
       <div className="app-credits__design">
         <CreditBlock
           name="Alyssa Guo"
-          href="https://github.com/anish-sinha1"
+          href="https://www.alyssaguo.me/"
           title="UX Designer and Content Writer"
-          email="jackieqvo@gmail.com"
+          email="hello@alyssaguo.me"
         />
         <CreditBlock
           name="Satveer Singh"
-          href="https://github.com/anish-sinha1"
+          href=""
           title="UX Designer and Content Writer"
-          email="jackieqvo@gmail.com"
+          email="satveerxsingh@gmail.com"
         />
         <CreditBlock
           name="Sai Ravi"
-          href="https://github.com/anish-sinha1"
+          href=""
           title="UX Designer"
-          email="jackieqvo@gmail.com"
+          email="saishreyaravi@gmail.com"
         />
       </div>
     </div>
