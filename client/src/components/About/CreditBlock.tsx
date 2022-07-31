@@ -15,9 +15,12 @@
  ** along with this program.  If not, see http://www.gnu.org/licenses/.
  **/
 
-import { useContext } from "react";
+import { useState, useContext } from "react";
 
 import SettingsCtx from "components/ctx";
+
+import { ReactComponent as UpArrow } from "assets/svg/up-arrow.svg";
+import { ReactComponent as UpArrowDark } from "assets/svg/up-arrow-dark.svg";
 
 const CreditBlock: React.FC<{
   title: string;
@@ -26,22 +29,34 @@ const CreditBlock: React.FC<{
   email?: string;
 }> = ({ title, name, href, email }) => {
   const ctx = useContext(SettingsCtx);
+  const Arrow = ctx.darkmode ? UpArrowDark : UpArrow;
+  const [showDetails, setShowDetails] = useState<boolean>(false);
   return (
-    <div className={`credit-block ${ctx.darkmode && `credit-block--dark`}`}>
-      <div className="credit-block__name">{name}</div>
-      <div className="credit-block__title">{title}</div>
-      <div className="credit-block__info">
-        {href && (
-          <>
-            Website:{" "}
-            <a href={href} target="_blank" rel="noreferrer">
-              {href}
-            </a>
-            <br />
-          </>
-        )}
-        Email: {email}
+    <div className={`credit-block`}>
+      <div className="credit-block__name">
+        <p className="about-name">{name}</p>
+        <Arrow
+          className={`accordion-toggle ${showDetails && "flipped"}`}
+          onClick={() => setShowDetails(() => !showDetails)}
+        />
       </div>
+      {showDetails && (
+        <div className="credit-block__info">
+          <div className="info-title">
+            <p className="">Title: {title}</p>
+          </div>
+          <div className="info-email">
+            <p className="">Email: {email}</p>
+          </div>
+          {href && (
+            <div className="info-website">
+              <a href={href} target="_blank" rel="noreferrer">
+                Website
+              </a>
+            </div>
+          )}
+        </div>
+      )}
     </div>
   );
 };

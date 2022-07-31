@@ -15,15 +15,24 @@
  ** along with this program.  If not, see http://www.gnu.org/licenses/.
  **/
 
+import { useState, useContext } from "react";
+
 import Credits from "components/About/Credits";
 import Card from "components/Reusables/Card";
 import CommunityConnections from "assets/resource-images/community-connections.png";
 
 import { ReactComponent as MainLogoDark } from "assets/svg/blackmothersfilm-logo-dark.svg";
+import { ReactComponent as UpArrow } from "assets/svg/up-arrow.svg";
+import { ReactComponent as UpArrowDark } from "assets/svg/up-arrow-dark.svg";
+
+import SettingsCtx from "components/ctx";
 
 import founders from "components/About/founders";
 
 const About = () => {
+  const ctx = useContext(SettingsCtx);
+  const [showWebsiteTeam, setShowWebsiteTeam] = useState<boolean>(false);
+  const Arrow = ctx.darkmode ? UpArrowDark : UpArrow;
   const foundersCards = founders.map(
     (founder: { name: string; bio: string; url?: string; imgSrc?: string }) => {
       return (
@@ -68,7 +77,16 @@ const About = () => {
       <div className="about-body">
         <div className="about--cards">{foundersCards}</div>
       </div>
-      <Credits />
+      <div className="show-more">
+        <h3 className="show-more__text">Show More</h3>
+        <Arrow
+          onClick={() => setShowWebsiteTeam(() => !showWebsiteTeam)}
+          className={`show-more__icon show-more__icon${
+            ctx.darkmode ? "--dark" : ""
+          } ${showWebsiteTeam && "flipped"}`}
+        />
+      </div>
+      {showWebsiteTeam && <Credits />}
     </section>
   );
 };

@@ -17,47 +17,63 @@
 
 .app-credits {
   display: grid;
-  grid-template-columns: 1fr;
-  width: 90%;
+  grid-template-columns: 1fr 1fr 1fr;
+  row-gap: 1rem;
+  justify-self: center;
   margin: 0 auto;
-  &__title {
-    text-align: center;
+  column-gap: 2rem;
+  width: 85%;
+  @media screen and (max-width: $small-screen-width) {
+    grid-template-columns: 1fr 1fr;
   }
-  row-gap: 2rem;
-  & > div {
-    display: grid;
+  @media screen and (max-width: $extremely-small-width) {
     grid-template-columns: 1fr;
-    row-gap: 2rem;
+    justify-items: center;
   }
-  margin-bottom: 6rem;
+}
+
+.accordion-toggle {
+  max-width: 1.5rem;
+  cursor: pointer;
+}
+
+.info-title,
+.info-website,
+.info-email {
+  & > p {
+    width: 100%;
+    margin: 0;
+    margin-bottom: 0.25rem;
+  }
+}
+
+.info-website {
+  color: $light-pink;
+  &:hover {
+    font-size: 1.02rem;
+    transition: all 0.2s ease;
+  }
 }
 
 .credit-block {
-  min-height: 5rem;
   display: grid;
-  font-weight: 100;
+  grid-template-columns: 1fr;
+  align-items: baseline;
+  justify-items: center;
   grid-auto-rows: 1fr;
-  grid-template-columns: 1fr 2fr;
-  justify-self: left;
-  justify-items: left;
-  width: 100%;
-  & > * {
-    margin: 0;
-  }
-  &__title,
-  &__email {
-    text-align: right;
-    justify-self: right;
+  grid-auto-columns: 1fr;
+  &__name {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 1rem;
+    align-items: center;
   }
   &__info {
-    justify-self: baseline;
-    justify-self: stretch;
-    grid-column: 1/3;
     font-size: 1rem;
-    & > a {
-      &:hover {
-        color: $green;
-      }
-    }
+    width: 100%;
+  }
+  @media screen and (max-width: $extremely-small-width) {
+    width: 87%;
   }
 }

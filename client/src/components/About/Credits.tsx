@@ -20,45 +20,34 @@ import CreditBlock from "components/About/CreditBlock";
 const Credits = () => {
   return (
     <div className="app-credits">
-      <div className="app-credits__title">
-        <h1>Development Team</h1>
-      </div>
-      <div className="app-credits__lead">
-        <CreditBlock
-          name="Jacqueline Vo"
-          href=""
-          title="Product Manager"
-          email="jackieqvo@gmail.com"
-        />
-      </div>
-      <div className="app-credits__eng">
-        <CreditBlock
-          name="Anish Sinha"
-          href="https://github.com/anish-sinha1"
-          title="Lead Software Engineer"
-          email="anishsinha0128@gmail.com"
-        />
-      </div>
-      <div className="app-credits__design">
-        <CreditBlock
-          name="Alyssa Guo"
-          href="https://www.alyssaguo.me/"
-          title="UX Designer and Content Writer"
-          email="hello@alyssaguo.me"
-        />
-        <CreditBlock
-          name="Satveer Singh"
-          href=""
-          title="UX Designer and Content Writer"
-          email="satveerxsingh@gmail.com"
-        />
-        <CreditBlock
-          name="Sai Ravi"
-          href=""
-          title="UX Designer"
-          email="saishreyaravi@gmail.com"
-        />
-      </div>
+      <CreditBlock
+        name="Anish Sinha"
+        href="https://github.com/anish-sinha1/"
+        title="Lead Software Engineer"
+        email="anishsinha0128@gmail.com"
+      />
+      <CreditBlock
+        name="Jacqueline Vo"
+        title="Product Manager"
+        email="jackieqvo@gmail.com"
+      />
+      <CreditBlock
+        name="Satveer Singh"
+        title="UX Designer and Content Writer"
+        email="satveerxsingh@gmail.com"
+      />
+      <CreditBlock
+        name="Alyssa Guo"
+        href="https://www.alyssa.me/"
+        title="UX Designer and Content Writer"
+        email="hello@alyssa.me"
+      />
+
+      <CreditBlock
+        name="Sai Ravi"
+        title="UX Designer"
+        email="anishsinha0128@gmail.com"
+      />
     </div>
   );
 };
