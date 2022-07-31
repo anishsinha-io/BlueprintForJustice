@@ -71,18 +71,20 @@
   font-size: 1.25rem;
   margin: 0 auto;
   justify-content: center;
+  width: 100%;
   &__text {
     align-self: center;
     margin-right: 1rem;
+    margin: 0;
+    margin-right: 1rem;
   }
   &__icon {
-    // width: 1.5rem;
-    width: 2.1%;
+    width: 1.5rem;
     align-self: center;
     justify-self: left;
     cursor: pointer;
     @media screen and (max-width: $extremely-small-width) {
-      justify-self: center;
+      width: 7.1%;
     }
   }
 
