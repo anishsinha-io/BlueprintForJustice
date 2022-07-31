@@ -36,7 +36,9 @@ const CreditBlock: React.FC<{
       <div className="credit-block__name">
         <p className="about-name">{name}</p>
         <Arrow
-          className={`accordion-toggle ${showDetails && "flipped"}`}
+          className={`accordion-toggle ${
+            showDetails && "flipped"
+          } credit-block-arrow`}
           onClick={() => setShowDetails(() => !showDetails)}
         />
       </div>
@@ -49,7 +51,7 @@ const CreditBlock: React.FC<{
             <p className="">Email: {email}</p>
           </div>
           {href && (
-            <div className="info-website">
+            <div className={`info-website${ctx.darkmode ? "--dark" : ""}`}>
               <a href={href} target="_blank" rel="noreferrer">
                 Website
               </a>

@@ -48,7 +48,10 @@
 }
 
 .info-website {
-  color: $light-pink;
+  color: $rose;
+  &--dark {
+    color: $green;
+  }
   &:hover {
     font-size: 1.02rem;
     transition: all 0.2s ease;
@@ -76,4 +79,8 @@
   @media screen and (max-width: $extremely-small-width) {
     width: 87%;
   }
+}
+
+.credit-block-arrow {
+  justify-self: right;
 }
