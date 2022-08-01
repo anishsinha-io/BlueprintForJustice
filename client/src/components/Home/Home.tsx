@@ -27,7 +27,9 @@ import SettingsCtx from "components/ctx";
 const Home = () => {
   const ctx = useContext(SettingsCtx);
   const navigate = useNavigate();
-  if (ctx.promptQuestionnaire) navigate("/questionnaire");
+  useEffect(() => {
+    if (ctx.promptQuestionnaire) navigate("/questionnaire");
+  });
   return (
     <section className="app-home">
       <Heading />

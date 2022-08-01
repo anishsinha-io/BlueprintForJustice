@@ -39,10 +39,11 @@
   width: 80%;
   border-radius: 1rem;
   filter: grayscale(100);
+  border: 1px solid $dark-gray;
   &--overlay {
-    border: 2px solid $white;
     filter: brightness(0.5) grayscale(100);
     cursor: pointer;
+    border: 2px solid $white;
   }
 }
 

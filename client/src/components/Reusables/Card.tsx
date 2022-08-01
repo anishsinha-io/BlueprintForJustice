@@ -15,8 +15,10 @@
  ** along with this program.  If not, see http://www.gnu.org/licenses/.
  **/
 
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
+
+import SettingsCtx from "components/ctx";
 
 // default card size is "lg"
 const Card: React.FC<{
@@ -46,6 +48,7 @@ const Card: React.FC<{
   text,
   className,
 }) => {
+  const ctx = useContext(SettingsCtx);
   const [hasOverlay, setHasOverlay] = useState<boolean>(false);
   return (
     <div
@@ -90,7 +93,7 @@ const Card: React.FC<{
         } label-container--${size}`}
       >
         <Icon className="label-container__icon" />
-        <h4 className={`label-container__label${link ? "" : "--nolink"}`}>
+        <h4 className={`label-container__label${ctx.darkmode ? "--dark" : ""}`}>
           {link ? <Link to={link}>{label}</Link> : label}
         </h4>
       </div>

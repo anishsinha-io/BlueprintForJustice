@@ -35,4 +35,8 @@ const QContext = React.createContext<QContextProps>({
   healing: 0,
 });
 
+const getRecommendations = (qctx: QContextProps): string[] => {
+  return [];
+};
+
 export default QContext;

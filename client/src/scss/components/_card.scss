@@ -97,7 +97,7 @@
 }
 
 .label-container {
-  color: $pink;
+  color: $light-gray;
   position: absolute;
   display: grid;
   top: 75%;
@@ -119,7 +119,12 @@
   }
   &__label {
     &:hover {
-      color: $green;
+      color: $pink;
+    }
+    &--dark {
+      &:hover {
+        color: $green;
+      }
     }
   }
 }
