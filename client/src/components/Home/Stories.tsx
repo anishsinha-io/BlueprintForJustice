@@ -3,6 +3,7 @@ import { useState } from "react";
 import GeneralResources from "assets/resource-images/general-resources.png";
 
 import { ReactComponent as PlayButton } from "assets/svg/play-button.svg";
+import { ReactComponent as PlayButtonDark } from "assets/svg/play-button-dark.svg";
 
 const Stories = () => {
   const [overlay, setOverlay] = useState<boolean>(false);
@@ -27,6 +28,16 @@ const Stories = () => {
           onMouseOver={() => setOverlay(() => true)}
           onMouseLeave={() => setOverlay(() => false)}
         ></img>
+        <a
+          href="https://www.blackmothersfilm.com/"
+          target="_blank"
+          rel="noreferrer"
+          className={!overlay ? "film-link" : "film-link--hidden"}
+          onMouseOver={() => setOverlay(() => true)}
+          onMouseLeave={() => setOverlay(() => false)}
+        >
+          <PlayButtonDark />
+        </a>
         <a
           href="https://www.blackmothersfilm.com/"
           target="_blank"

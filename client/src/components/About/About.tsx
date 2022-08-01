@@ -78,7 +78,7 @@ const About = () => {
         <div className="about--cards">{foundersCards}</div>
       </div>
       <div className="show-more">
-        <h3 className="show-more__text">Show More</h3>
+        <h3 className="show-more__text">Creative Team</h3>
         <Arrow
           onClick={() => setShowWebsiteTeam(() => !showWebsiteTeam)}
           className={`show-more__icon show-more__icon${

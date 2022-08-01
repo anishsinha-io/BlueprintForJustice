@@ -45,7 +45,7 @@ const CreditBlock: React.FC<{
       {showDetails && (
         <div className="credit-block__info">
           <div className="info-title">
-            <p className="">Title: {title}</p>
+            <p className="">{title}</p>
           </div>
           <div className="info-email">
             <p className="">Email: {email}</p>
